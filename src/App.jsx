@@ -8,17 +8,26 @@ const question = [
         description: "Props - это  это входные данные React-компонентов, передаваемые от родительского компонента дочернему компоненту.",
     },
     {
-        title: "Money Forward",
-        description: "Frontend and backend for a salary payout service on demand",
+        title: "Зачем для тега <script> добавляют атрибуты async  и defer?",
+        description: "Без использования атрибутов в теге <script>, когда браузер загружает HTML и доходит до тега <script>, то он может дальше строить DOM, пока не выполнит скрипт. Соответственно потребуется больше времени  для того, чтобы показать пользователю готовую страницу. Для решения этой проблемы тег <script> можно поместить в конец вниз страницы. Но это не идеальное решение, т к выполнение скрипта может начаться с сильной задержкой. Для этого есть атрибуты." +
+            " async: " +
+            " Свойство async для тега <script> указывает браузеру  загружать скрипт асинхронно, не блакируя последующий парсинг HTML или выполнение других скриптов на странице.  " +
+            " Скрипт с атрибутом  async загружается параллельно с парсингом HTML и выполняется сразу после завершения загрузки. Порядок выполнения скриптов не гарантируется." +
+            " Подходит для скриптов, которые не зависят от других ресурсов на странице и могут быть выполнены независимо от них.  " +
+            "defer :" +
+            " Свойство defer для тега <script> говорит браузеру загружать скрипт асинхронно, но откладывать его выполнение до завершения парсинга HTML." +
+            " Скрипты с атрибутом defer загружаются параллельно с парсингом HTML, но их выполнение откладывается до завершения парсинга. Они выпоняются в том порядке, в котором ониуказаны в HTML, перед событием DOMContentLoaded " +
+            " Используются для скриптов, которые должны быть выполены после загрузки DOM, но до генерации события DOMContentLoaded браузером." +
+            " Использование async и defer помогает ускорить загрузку страницы, улучшить воспроизводимость скриптов и повысить производительность веб-страницы"
     },
 ]
 
 function App() {
-    const [activeIndex, setActiveIndex] = useState(null)
+    const [activeIndex, setActiveIndex] = useState(true)
 
 
-    function toggleArrow(index) {
-        setActiveIndex(prev => (prev === index ? null : index))
+    function toggleArrow() {
+        setActiveIndex(!activeIndex)
     }
 
     return (
@@ -26,15 +35,15 @@ function App() {
             <h1>Вопросики!</h1>
             {question.map((item, index) => (
                 <div className="arrow" key={index}>
-                    {activeIndex === index ? (
+                    {activeIndex ? (
                         <>
                             <p>{item.title}</p>
-                            <button onClick={() => toggleArrow(index)}>	&#9825;</button>
+                            <button onClick={() => toggleArrow(index)}>&hearts;</button>
                         </>
                     ) : (
                         <>
                             <p>{item.description}</p>
-                            <button onClick={() => toggleArrow(index)}>&hearts;</button>
+                            <button onClick={() => toggleArrow(index)}>&#9825;</button>
                         </>
                     )}
                 </div>
