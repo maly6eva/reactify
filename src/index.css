@@ -1,112 +1,106 @@
 *,
 *::before,
 *::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+    font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+    color: rgba(255, 255, 255, 0.87);
+    background-color: #242424;
+    color-scheme: light dark;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+    font-weight: 500;
+    text-decoration: inherit;
+    color: #646cff;
 }
+
 a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+    color: #535bf2;
 }
 
 button {
-  margin: 10px;
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #438024;
-  color: #f60606;
-  cursor: pointer;
-  transition: border-color 0.25s;
-  height: 40px;
-  width: 40px;
+    font-family: inherit;
+
+    font-weight: 500;
+    width: 40px;
+    height: 40px;
+    margin: 10px;
+    padding: 0.6em 1.2em;
+    cursor: pointer;
+    transition: border-color 0.25s;
+    color: #f60606;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    background-color: #438024;
 }
 
 
 @media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f3eeee;
-  }
+    :root {
+        color: #213547;
+        background-color: #ffffff;
+    }
+
+    a:hover {
+        color: #747bff;
+    }
+
+    button {
+        background-color: #f3eeee;
+    }
 }
+
 .arrow {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  padding: 20px;
-  margin-bottom: 10px;
-  border-radius: 10px;
-  background-color: #333;
-  color: white;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding: 20px;
+    color: #ffffff;
+    border-radius: 10px;
+    background-color: #333;
 }
 
 .content {
-  flex: 1;
-  text-align: left;
-  margin-right: 20px;
+    flex: 1;
+    margin-right: 20px;
+    text-align: left;
 }
 
 .question {
-  font-weight: bold;
-  margin-bottom: 10px;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
 .answer {
-  color: #cfcfcf;
-  line-height: 1.4;
+    line-height: 1.4;
+    color: #ece8e8;
+    font-weight: 500;
+    font-size: 20px;
 }
 
 .arrow button {
-  width: 50px;
-  height: 50px;
-  font-size: 24px;
-  background-color: green;
-  color: red;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  flex-shrink: 0;
+    font-size: 24px;
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    color: red;
+    border: none;
+    border-radius: 10px;
+    background-color: green;
 }
