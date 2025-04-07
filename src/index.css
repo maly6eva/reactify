@@ -72,9 +72,41 @@ button {
     background-color: #f3eeee;
   }
 }
-
-.arrow{
+.arrow {
   display: flex;
   justify-content: space-between;
-  gap: 30px;
+  align-items: flex-start;
+  padding: 20px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  background-color: #333;
+  color: white;
+}
+
+.content {
+  flex: 1;
+  text-align: left;
+  margin-right: 20px;
+}
+
+.question {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.answer {
+  color: #cfcfcf;
+  line-height: 1.4;
+}
+
+.arrow button {
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  background-color: green;
+  color: red;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  flex-shrink: 0;
 }
