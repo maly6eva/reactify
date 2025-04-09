@@ -4,6 +4,7 @@ import './App.css'
 
 const question = [
     {
+        number: '1',
         title: "Как узнать какого типа переменная? Что и в каком виде возвращает typeof",
         description: (
             <>
@@ -33,6 +34,7 @@ const question = [
         ),
     },
     {
+        number: '2',
         title: "Зачем для тега <script> добавляют атрибуты async и defer?",
         description: (
             <>
@@ -50,8 +52,23 @@ const question = [
         ),
     },
     {
+        number: '3',
         title: "Что такое замыкания в JS и почему они важны?",
         description: "Замыкания в JS - это функция, которая запоминает свое окружение во время создания и может использовать переменные из этого окружения даже после того, как это окружение прекратило свое существование. Они важны, потому что позволяют создавать приватные переменные, сохранять состояние и делать код более модульным.",
+    },
+    {
+        number: '4',
+        title: "Что такое NaN? Какого типа это значения? Как можно узнать, равно ли значение переменной NaN?",
+        description:
+        <>
+        NaN означает 'Not-A-Number' и является специальным значением в JS, которое указывает на ошибку при выполнении математических операций, когда результат не является числом. Тип значения NaN в JS - это число (Number).
+            <br/>
+            Чтобы проверить,равно ли значение переменной NaN, можно использовать функцию  isNaN(). Например:
+            <br/>
+            <br/>
+            let result = 10 / 'привет'; <br/>
+            console.log(isNaN(result)); // Вернет true, т к результат деления не является числом
+            </>
     },
 ];
 
@@ -74,13 +91,14 @@ function App() {
                     <div className="content">
                         {activeIndex[index] ? (
                             <>
-                                <p className="question">{item.title}</p>
+                                <p className="question"> {item.title}</p>
                                 <p  className="answer" >{item.description}</p>
                                 <button  onClick={() => toggleArrow(index)}>&#9825;</button>
+
                             </>
                         ) : (
                             <>
-                                <p className="question">{item.title}</p>
+                                <p className="question">{item.number} {item.title}</p>
                                 <button onClick={() => toggleArrow(index)}> &hearts;</button>
                             </>
                         )}
