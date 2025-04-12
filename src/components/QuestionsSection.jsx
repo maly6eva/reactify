@@ -1,32 +1,31 @@
 import React from 'react';
 
-export const Html = ({questionHtml, toggleArrowHtml, activeHtmlIndex}) => {
+export const QuestionsSection = ({title, question, toggleArrow, activeIndex, children}) => {
     return (
         <>
-            <h2>HTML</h2>
-            {questionHtml.map((item, index) => {
+            <h2>{title}</h2>
+            {question.map((item, index) => {
                 return (
                     <div className="arrow" key={index}>
                         <div className="content">
-                            {activeHtmlIndex[index] ? (
+                            {activeIndex[index] ? (
                                 <>
                                     <p className="question"> {item.title}</p>
                                     <p  className="answer">{item.description}</p>
-                                    <button  onClick={() => toggleArrowHtml(index)}>&#9825;</button>
+                                    <button  onClick={() => toggleArrow(index)}>&#9825;</button>
 
                                 </>
                             ) : (
                                 <>
                                     <p className="question">{item.title}</p>
-                                    <button onClick={() => toggleArrowHtml(index)}> &hearts;</button>
+                                    <button onClick={() => toggleArrow(index)}> &hearts;</button>
                                 </>
                             )}
                         </div>
                     </div>
                 )
             })}
-
+            {children}
         </>
     );
 };
-
