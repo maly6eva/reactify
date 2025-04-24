@@ -1,8 +1,11 @@
 import React from 'react';
+import {Form} from "./Form.jsx";
 
 export const QuestionsSection = ({title, question, toggleArrow, activeIndex, children}) => {
     return (
         <>
+
+
             <h2>{title}</h2>
             {question.map((item, index) => {
                 return (

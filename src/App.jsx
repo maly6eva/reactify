@@ -1,7 +1,8 @@
-import {useState} from 'react'
+import React, {useState} from 'react'
 
 import './App.css'
 import {QuestionsSection} from "./components/QuestionsSection.jsx";
+import {Form} from "./components/Form.jsx";
 
 const questionHtml = [
     {
@@ -549,6 +550,7 @@ function App() {
 
     return (
         <>
+            <Form />
             <QuestionsSection title={'HTML'} question={questionHtml} toggleArrow={toggleArrowHtml}
                               activeIndex={activeHtmlIndex}/>
             <QuestionsSection title={'CSS'} question={questionCss} toggleArrow={toggleArrowCss}

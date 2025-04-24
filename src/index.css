@@ -79,3 +79,33 @@ button {
     border-radius: 10px;
     background-color: green;
 }
+
+form{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 30px;
+
+}
+input {
+    width: 50%;
+    height: 50px;
+    padding-left: 15px;
+    background-color: #333333 ;
+    font-size: 30px;
+}
+input, button {
+    /*border: none;*/
+    outline: none;
+    border-radius: 5px;
+}
+
+.button-form {
+    cursor: pointer;
+
+    width: 42px;
+    height: 52px;
+    margin: 0 5px;
+    border: none;
+    outline: none;
+}
