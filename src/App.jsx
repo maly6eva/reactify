@@ -524,9 +524,22 @@ function App() {
     const [activeHtmlIndex, setActiveHtmlIndex] = useState({})
     const [activeCssIndex, setActiveCssIndex] = useState({})
     const [activeJsIndex, setActiveJsIndex] = useState({})
+    const [search, setSearch] = useState('')
+
+    const filterHtmlQuestions = search
+    ? questionHtml.filter(q => q.title.toLowerCase().includes(search.toLowerCase()))
+        : questionHtml
+
+    const filterCssQuestions = search
+    ? questionCss.filter(q => q.title.toLowerCase().includes(search.toLowerCase()))
+        : questionCss
+
+    const filterJsQuestion = search
+    ?  questionJs.filter(q => q.title.toLowerCase().includes(search.toLowerCase()))
+        : questionJs
 
 
-    function toggleArrowHtml(item) {
+        function toggleArrowHtml(item) {
         setActiveHtmlIndex((prev) => ({
             ...prev,
             [item]: !prev[item]
@@ -550,12 +563,19 @@ function App() {
 
     return (
         <>
-            <Form />
-            <QuestionsSection title={'HTML'} question={questionHtml} toggleArrow={toggleArrowHtml}
+            <form action="">
+                <input type="search"
+                       placeholder='Поиск по названию вопроса'
+                       value={search}
+                       onChange={(e) => setSearch(e.target.value)}
+                />
+                <button type="submit" className='button-form'>🔍</button>
+            </form>
+            <QuestionsSection title={'HTML'} question={filterHtmlQuestions} toggleArrow={toggleArrowHtml}
                               activeIndex={activeHtmlIndex}/>
-            <QuestionsSection title={'CSS'} question={questionCss} toggleArrow={toggleArrowCss}
+            <QuestionsSection title={'CSS'} question={filterCssQuestions} toggleArrow={toggleArrowCss}
                               activeIndex={activeCssIndex}/>
-            <QuestionsSection title={'JS'} question={questionJs} toggleArrow={toggleArrowJs}
+            <QuestionsSection title={'JS'} question={filterJsQuestion} toggleArrow={toggleArrowJs}
                               activeIndex={activeJsIndex}/>
         </>
     )
