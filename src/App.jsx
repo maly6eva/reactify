@@ -618,7 +618,7 @@ event.preventDefault(); // ⛔ Останавливаем стандартное
             </>
     },
     {
-        title: "Зачем нужен Метод stopPropagation?",
+        title: "20. Зачем нужен Метод stopPropagation?",
         description:
             <>
                 <p>Метод stopPropagation() используется в JavaScript, чтобы остановить “всплытие события” вверх по DOM-дереву.</p>
@@ -632,9 +632,20 @@ event.preventDefault(); // ⛔ Останавливаем стандартное
             </>
     },
     {
+        title: "21. Отличие Event.target от event.currentTarget?",
+        description:
+            <>
+                <p>✅ event.target — это элемент, в котором происходит событие, или элемент, вызвавший событие. Это тот элемент, по которому фактически кликнули.</p>
+                <p>✅ event.currentTarget — это тот элемент, на котором висит обработчик события.</p>
+
+
+            </>
+    },
+    {
         title: "?",
         description:
             <>
+
 
             </>
     },
