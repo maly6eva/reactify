@@ -14,7 +14,7 @@ export const QuestionsSection = ({title, question, toggleArrow, activeIndex, chi
                             {activeIndex[index] ? (
                                 <>
                                     <p className="question"> {item.title}</p>
-                                    <p  className="answer">{item.description}</p>
+                                    <div  className="answer">{item.description}</div>
                                     <button  onClick={() => toggleArrow(index)}>&#9825;</button>
 
                                 </>
