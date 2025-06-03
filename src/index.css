@@ -109,3 +109,9 @@ input, button {
     border: none;
     outline: none;
 }
+
+pre {
+    white-space: pre-wrap;
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
