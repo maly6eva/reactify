@@ -102,7 +102,6 @@ input, button {
 
 .button-form {
     cursor: pointer;
-
     width: 42px;
     height: 52px;
     margin: 0 5px;
@@ -114,4 +113,12 @@ pre {
     white-space: pre-wrap;
     word-break: break-word;
     overflow-wrap: break-word;
+}
+
+
+.question-card img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-top: 1rem;
 }
