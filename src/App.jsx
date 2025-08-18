@@ -1884,7 +1884,6 @@ dog.helloWorld(sayHello);
                     данных new String(“word”).valueOf();¬</p>
             </>
     },
-
     {
         title: "84. Отличие примитивов от ссылочных типов данных?",
         description:
