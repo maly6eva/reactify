@@ -1,5 +1,4 @@
 import React from 'react';
-import {Form} from "./Form.jsx";
 
 export const QuestionsSection = ({title, question, toggleArrow, activeIndex, children}) => {
     return (
