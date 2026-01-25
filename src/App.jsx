@@ -2655,11 +2655,33 @@ const questionReact = [
 
 ]
 
+const questionTS = [
+    {
+        title: "1. отличие Type oт Interface",
+        description:
+            <>
+                <p>
+                    <strong> ✅Объединение (Merging):</strong></p>
+                    <p> Interface: Можно объявить дважды с одним именем, и TypeScript сам «склеит» их в один (удобно для расширения библиотек)..</p>
+                        <p> Type: Нельзя объявлять дважды — будет ошибка..</p>
+                            <p><strong> ✅Гибкость данных:.</strong></p>
+                                <p>Interface: Описывает только объекты или функции..</p>
+                                    <p>Type: Может быть чем угодно: строкой, числом, объектом, массивом или выбором из нескольких вариантов (например, type Status = "success" | "error"). Интерфейс так не умеет..</p>
+                                        <p><strong> ✅ Наследование:.</strong></p>
+                                            <p> Interface: Расширяется через extends (классический путь)..</p>
+                                                <p> Type: Соединяется через символ & (пересечение)..</p>
+                                                    <p> <strong> ✅Простое правило:</strong> Если нужно описать структуру объекта — берите interface. Если нужно что-то сложное (выбор из вариантов, псевдонимы для строк) — берите type.</p>
+
+            </>
+    }
+]
+
 function App() {
     const [activeHtmlIndex, setActiveHtmlIndex] = useState({})
     const [activeCssIndex, setActiveCssIndex] = useState({})
     const [activeJsIndex, setActiveJsIndex] = useState({})
     const [activeReactIndex, setActiveReactIndex] = useState({})
+    const [activeTSIndex, setActiveTSIndex] = useState({})
     const [search, setSearch] = useState('')
 
     const filterHtmlQuestions = search
@@ -2677,6 +2699,10 @@ function App() {
     const filterReactQuestion = search
         ? questionReact.filter(q => q.title.toLowerCase().includes(search.toLowerCase()))
         : questionReact
+
+    const filterTSQuestion = search
+        ? questionTS.filter(q => q.title.toLowerCase().includes(search.toLowerCase()))
+        : questionTS
 
 
     function toggleArrowHtml(item) {
@@ -2708,6 +2734,13 @@ function App() {
         }))
     }
 
+    function toggleArrowTS(item) {
+        setActiveTSIndex((prev) => ({
+            ...prev,
+            [item]: !prev[item]
+        }))
+    }
+
     return (
         <>
             <form action="">
@@ -2726,6 +2759,8 @@ function App() {
                               activeIndex={activeJsIndex}/>
             <QuestionsSection title={'React'} question={filterReactQuestion} toggleArrow={toggleArrowReact}
                               activeIndex={activeReactIndex}/>
+            <QuestionsSection title={'TS'} question={filterTSQuestion} toggleArrow={toggleArrowTS}
+                              activeIndex={activeTSIndex}/>
         </>
     )
 }
