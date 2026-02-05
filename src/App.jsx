@@ -2931,6 +2931,58 @@ const questionReact = [
             </>
     },
     {
+        title: "41. отличие контролируемых от неконтролируемых компонет",
+        description:
+            <>
+                <p><b>Контролируемый компонент (Controlled Component)</b></p>
+                <p>Его состояние полностью контролируется React. Значение поля ввода
+                    хранится в состоянии компонента (например, useState) и обновляется
+                    через обработчик события onChange.</p>
+                <p><b>Неконтролируемый компонент (Uncontrolled Component):</b></p>
+                <p> Его состояние хранится в самом DOM-дереве, как у обычного HTML-элемента.
+                    Мы получаем доступ к его значению только тогда, когда это необходимо, используя Ref (ссылку)</p>
+                <br/>
+                <p>контролируемые управляются состоянием через useState и обработчики, а неконтролируемые — через ref
+                    и прямое обращение к DOM.</p>
+                <pre>
+                    <code>
+                        {`
+export default function App() {
+  const [state, setState] = useState("");
+  const ref = useRef(null);
+
+  const onClickForm = () => {
+    console.log("controlled: ", state);
+    console.log("uncontrolled: ", ref.current.value);
+  };
+
+  return (
+    <form onClick={onClickForm}>
+      <input
+        placeholder="controlled"
+        value={state}
+        onChange={(e) => setState(e.target.value)}
+      />
+      <input placeholder="uncontrolled" ref={ref} />
+
+      <button>Отправить заявку на кредит</button>
+    </form>
+  );
+}
+                        `}
+                    </code>
+                </pre>
+
+            </>
+    },
+    {
+        title: "41. ",
+        description:
+            <>
+                <p></p>
+            </>
+    },
+    {
         title: "41. ",
         description:
             <>
