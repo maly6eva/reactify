@@ -139,13 +139,25 @@ const questionHtml = [
             <>
                 <p>HTML - язык гипертекстовой разметки который сочтомт из текста и тегов</p>
                 <p> DOCTYPE: Указывает тип документа - HTML5. Это первый элемент в документе.</p>
-                <p> HTML-тег: Корневой элемент документа. Опционально может содержать атрибут lang для указания языка.</p>
-                <p>   Head и Body: Внутри тега HTML могут находиться только два элемента: head и body.</p>
-                <p> Head:  содержит служебную информацию о странице. Эта информация не отображается непосредственно на веб-странице,
+                <p> HTML-тег: Корневой элемент документа. Опционально может содержать атрибут lang для указания
+                    языка.</p>
+                <p> Head и Body: Внутри тега HTML могут находиться только два элемента: head и body.</p>
+                <p> Head: содержит служебную информацию о странице. Эта информация не отображается непосредственно на
+                    веб-странице,
                     но важна для браузеров и поисковых систем Содержит метаданные, ссылки на CSS и скрипты, мета-теги,
                     заголовок документа
                     (title). Эти элементы не отображаются на странице.</p>
                 <p>Body: Содержит основное содержимое страницы, которое будет отображаться пользователю.</p>
+            </>
+    },
+    {
+        title: "Пути",
+        description:
+            <>
+                <p> Абсолютный URL содержит полный адрес до изображения, включая протокол
+                    (http или https), домен и путь. Относительный путь указывает местоположение
+                    файла относительно текущего документа, что удобно при работе с локальными файлами.
+                </p>
             </>
     },
     {
@@ -3090,6 +3102,108 @@ const questionTS = [
                     мне».</p>
                 <p>✅Это инструмент для распаковки сложных типов.</p>
             </>
+    },
+    {
+        title: "3. Утилитные типы",
+        description: (
+            <>
+            <pre>
+                <code>{`Types
+
+export type DomainTask = {
+  description: string
+  title: string
+  status: number
+  priority: TaskPriority
+  startDate: string
+  deadline: string
+  id: string
+  todoListId: string
+  order: number
+  addedDate: string
+}`}</code>
+            </pre>
+
+                <p>
+                    <b>Partial</b><br/>
+                    <code>type Model1 = Partial&lt;DomainTask&gt;</code> — делает все свойства типа необязательными.
+                </p>
+
+                <p>
+                    <b>Required</b><br/>
+                    <code>type Model1 = Required&lt;DomainTask&gt;</code> — делает все свойства типа обязательными.
+                </p>
+
+                <p>
+                    <b>Omit</b><br/>
+                    <code>type Model1 = Omit&lt;DomainTask, 'order' | 'deadline'&gt;</code> — берет все свойства
+                    из <code>DomainTask</code>, кроме <code>order</code> и <code>deadline</code>.
+                </p>
+
+                <p>
+                    <b>Pick</b><br/>
+                    <code>type Model1 = Pick&lt;DomainTask, 'order' | 'deadline'&gt;</code> — выбирает
+                    из <code>DomainTask</code> только <code>order</code> и <code>deadline</code>.
+                </p>
+
+                <p>
+                    <b>Для union-типов:</b><br/>
+                    <code>type FilterValue = 'all' | 'completed' | 'active'</code>
+                </p>
+
+                <p>
+                    <b>Extract</b><br/>
+                    <code>type Model1 = Extract&lt;FilterValue, 'all' | 'completed'&gt;</code> — берет
+                    из <code>FilterValue</code> только <code>'all'</code> и <code>'completed'</code>.
+                </p>
+
+                <p>
+                    <b>Exclude</b><br/>
+                    <code>type Model1 = Exclude&lt;FilterValue, 'all'&gt;</code> — берет за
+                    основу <code>FilterValue</code>, но убирает <code>'all'</code>.
+                </p>
+
+                <p>
+                    <b>Record</b><br/>
+                    <code>Record&lt;string, DomainTask[]&gt;</code> — объект, у которого ключи — строки, а значения —
+                    массивы <code>DomainTask</code>.
+                </p>
+
+                <p>
+                    <b>ReturnType</b>
+                </p>
+
+                <pre>
+                <code>{`const sum = (num: number) => {
+  return num
+}
+
+type Model = ReturnType<typeof sum>`}</code>
+            </pre>
+
+                <p>
+                    <code>ReturnType</code> — встроенный utility-тип TypeScript, который принимает тип функции и
+                    возвращает тип значения, которое функция возвращает.
+                    В этом примере это будет <code>number</code>.
+                </p>
+
+                <p>
+                    <b>Parameters</b>
+                </p>
+
+                <pre>
+                <code>{`const sum = (num: number) => {
+  return num
+}
+
+type Model = Parameters<typeof sum>`}</code>
+            </pre>
+
+                <p>
+                    <code>Parameters</code> — принимает тип функции и возвращает типы её параметров в виде массива.
+                </p>
+            </>
+        )
     }
 ]
 
